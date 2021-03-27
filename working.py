@@ -3,7 +3,6 @@ import pandas as pd
 import scipy.stats
 year=2021
 league = League(league_id=18927521,year=year)
-data = league._fetch_league()
 scores = dict()
 won = dict()
 scores_against = dict()
@@ -45,8 +44,20 @@ df3 = pd.DataFrame.from_dict(scores_against).T
 df3['for'] = 0
 df = df.append(df3).reset_index()
 table = pd.pivot_table(df,index=['index','for'])
-table2 = table.stack()
+table2 = pd.DataFrame(table.stack())
 table2.to_csv("scores2"+str(year)+".csv")
+table2.index.names = ['teams','for','week']
+table2.columns = ['score']
+table2 = table2.drop(0,level='for')
+table2['Mean_Opponent'] = (table2.groupby('week')['score'].transform('sum') - table2['score'])/(len(table2.groupby('teams')['score'])-1)
+table2['normalized score'] = table2['score'] - table2['Mean_Opponent']
+if 0 in df.values:
+    table2 = table2.drop(0,level='week')
+    table2 = table2[(table2.T != 0).any()]
+#table2['Cumul_Sum'] = table2.groupby('teams')['normalized score'].transform('cumsum')
+print(table2)
+
+
 ptsfor = df[df['for']==1].drop(columns=['for',0])
 ptsfor = ptsfor.set_index('index').T
 pdf = pd.DataFrame(columns=['team1','team2','pval'])

@@ -1,8 +1,8 @@
 from espn_api.basketball import League
 import pandas as pd
 import scipy.stats
-year=2020
-league = League(league_id=18927521,year=year,espn_s2='AEAPjrqlooj6OgnN07vPsJ7L50zi%2BJG1a8cwJI7K2BHWJGlO6UGWK8BfZqdiRhNAnkIsIaar2V5q3Q9QpopVvceB2t31SL%2FiCYXV9TR3H5GsYcuJEBz1DgR%2Flr%2BthvC5eCrlMpfOumiIVtImkp3IckpszoXegoNjQQljM57oxQJuOohtsJ9APcughN7Vr8buD836WCUuRrGLjBVdds6Jp7wZKhFNKo%2FrM4vxLBR%2ByAqi5IAsWulvFjHVuzKMpjKE1B8d8J2A5sQfwYRR%2FUrpDSv0', swid='{0549A5F6-57A7-493C-ABAC-909FE5E8DB00}')
+year=2021
+league = League(league_id=18927521,year=year)
 data = league._fetch_league()
 scores = dict()
 won = dict()
@@ -39,19 +39,14 @@ for team in league.teams:
     wins[str(team)[5:-1]]=team.losses 
 
 df = pd.DataFrame.from_dict(scores).T
-#df_t = pd.pivot_table(df,index=)
 df['for'] = 1
-#df = df.stack()
-#df = df.rename(columns={10:'wins',11:'losses'})
 df2 = pd.DataFrame.from_dict(won).T
 df3 = pd.DataFrame.from_dict(scores_against).T
 df3['for'] = 0
 df = df.append(df3).reset_index()
 table = pd.pivot_table(df,index=['index','for'])
 table2 = table.stack()
-#table2 = table2.rename(columns={'','week'})
 table2.to_csv("scores2"+str(year)+".csv")
-#table.to_csv('scores.csv')
 ptsfor = df[df['for']==1].drop(columns=['for',0])
 ptsfor = ptsfor.set_index('index').T
 pdf = pd.DataFrame(columns=['team1','team2','pval'])
@@ -79,4 +74,3 @@ pdf['team1'] = tm1
 pdf['team2'] = tm2
 pdf['pvalue'] = pv
 pdf.to_csv('pdf.csv')
-print("this is the end")

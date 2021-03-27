@@ -1,0 +1,65 @@
+,team1,team2,pvalue
+0,Robin Lopez is bad,Robin Lopez is bad,1.0
+1,Robin Lopez is bad,FuxEm_Like ARabbott,0.3364427935910047
+2,Robin Lopez is bad,Ballpark Franks,0.45754324528153045
+3,Robin Lopez is bad,Double Pandemic P,0.45371719725969994
+4,Robin Lopez is bad,Boban  Marjanovic ,0.5186001080370318
+5,Robin Lopez is bad,Harrisburg Frank,0.7984607477405581
+6,Robin Lopez is bad,King James  MVP 2021,0.21180697963398487
+7,Robin Lopez is bad,Frankpark Balls,0.7848596729303563
+8,FuxEm_Like ARabbott,Robin Lopez is bad,0.6635572064089953
+9,FuxEm_Like ARabbott,FuxEm_Like ARabbott,1.0
+10,FuxEm_Like ARabbott,Ballpark Franks,0.6260588316829511
+11,FuxEm_Like ARabbott,Double Pandemic P,0.6202641609913138
+12,FuxEm_Like ARabbott,Boban  Marjanovic ,0.6801559583985789
+13,FuxEm_Like ARabbott,Harrisburg Frank,0.892439497921019
+14,FuxEm_Like ARabbott,King James  MVP 2021,0.3513392676693063
+15,FuxEm_Like ARabbott,Frankpark Balls,0.8832924967299944
+16,Ballpark Franks,Robin Lopez is bad,0.5424567547184695
+17,Ballpark Franks,FuxEm_Like ARabbott,0.37394116831704893
+18,Ballpark Franks,Ballpark Franks,1.0
+19,Ballpark Franks,Double Pandemic P,0.4955607505718416
+20,Ballpark Franks,Boban  Marjanovic ,0.5610750937394731
+21,Ballpark Franks,Harrisburg Frank,0.8282674904605261
+22,Ballpark Franks,King James  MVP 2021,0.2400249806815134
+23,Ballpark Franks,Frankpark Balls,0.8157419460479542
+24,Double Pandemic P,Robin Lopez is bad,0.5462828027403
+25,Double Pandemic P,FuxEm_Like ARabbott,0.37973583900868624
+26,Double Pandemic P,Ballpark Franks,0.5044392494281584
+27,Double Pandemic P,Double Pandemic P,1.0
+28,Double Pandemic P,Boban  Marjanovic ,0.5646458414644053
+29,Double Pandemic P,Harrisburg Frank,0.8283921846735196
+30,Double Pandemic P,King James  MVP 2021,0.24655266188197078
+31,Double Pandemic P,Frankpark Balls,0.8160027025896051
+32,Boban  Marjanovic ,Robin Lopez is bad,0.4813998919629682
+33,Boban  Marjanovic ,FuxEm_Like ARabbott,0.3198440416014211
+34,Boban  Marjanovic ,Ballpark Franks,0.43892490626052694
+35,Boban  Marjanovic ,Double Pandemic P,0.43535415853559467
+36,Boban  Marjanovic ,Boban  Marjanovic ,1.0
+37,Boban  Marjanovic ,Harrisburg Frank,0.7853382513647491
+38,Boban  Marjanovic ,King James  MVP 2021,0.19904438054828588
+39,Boban  Marjanovic ,Frankpark Balls,0.7712727787667932
+40,Harrisburg Frank,Robin Lopez is bad,0.20153925225944197
+41,Harrisburg Frank,FuxEm_Like ARabbott,0.10756050207898107
+42,Harrisburg Frank,Ballpark Franks,0.1717325095394739
+43,Harrisburg Frank,Double Pandemic P,0.17160781532648045
+44,Harrisburg Frank,Boban  Marjanovic ,0.2146617486352509
+45,Harrisburg Frank,Harrisburg Frank,1.0
+46,Harrisburg Frank,King James  MVP 2021,0.05548673202275434
+47,Harrisburg Frank,Frankpark Balls,0.48212678261245623
+48,King James  MVP 2021,Robin Lopez is bad,0.7881930203660151
+49,King James  MVP 2021,FuxEm_Like ARabbott,0.6486607323306937
+50,King James  MVP 2021,Ballpark Franks,0.7599750193184867
+51,King James  MVP 2021,Double Pandemic P,0.7534473381180292
+52,King James  MVP 2021,Boban  Marjanovic ,0.8009556194517141
+53,King James  MVP 2021,Harrisburg Frank,0.9445132679772457
+54,King James  MVP 2021,King James  MVP 2021,1.0
+55,King James  MVP 2021,Frankpark Balls,0.9388913551806806
+56,Frankpark Balls,Robin Lopez is bad,0.21514032706964364
+57,Frankpark Balls,FuxEm_Like ARabbott,0.11670750327000554
+58,Frankpark Balls,Ballpark Franks,0.18425805395204575
+59,Frankpark Balls,Double Pandemic P,0.1839972974103949
+60,Frankpark Balls,Boban  Marjanovic ,0.22872722123320682
+61,Frankpark Balls,Harrisburg Frank,0.5178732173875438
+62,Frankpark Balls,King James  MVP 2021,0.06110864481931948
+63,Frankpark Balls,Frankpark Balls,1.0

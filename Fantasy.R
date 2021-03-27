@@ -11,7 +11,7 @@ library(nlme)
 library(gridExtra)
 library(grid)
 library(ggpmisc)
-df = read.csv('/Users/frankgentile/Documents/NBA/scores2.csv')
+df = read.csv('scores22021.csv')
 df = within(df, meanWeek <- ave(X0, X, FUN = mean))
 names(df)[names(df) == "index"] <- "Teams"
 df$X1 = df$X0 - df$meanWeek

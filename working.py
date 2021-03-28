@@ -45,16 +45,28 @@ df3['for'] = 0
 df = df.append(df3).reset_index()
 table = pd.pivot_table(df,index=['index','for'])
 table2 = pd.DataFrame(table.stack())
-table2.to_csv("scores2"+str(year)+".csv")
+#table2.to_csv("scores2"+str(year)+".csv")
 table2.index.names = ['teams','for','week']
 table2.columns = ['score']
-table2 = table2.drop(0,level='for')
-table2['Mean_Opponent'] = (table2.groupby('week')['score'].transform('sum') - table2['score'])/(len(table2.groupby('teams')['score'])-1)
-table2['normalized score'] = table2['score'] - table2['Mean_Opponent']
-if 0 in df.values:
-    table2 = table2.drop(0,level='week')
-    table2 = table2[(table2.T != 0).any()]
-#table2['Cumul_Sum'] = table2.groupby('teams')['normalized score'].transform('cumsum')
+df_pts_for = table2.drop(0,level='for').reset_index(level='for', drop=True)
+df_pts_ag = table2.drop(1,level='for').reset_index(level='for', drop=True)
+df_pts_for['Mean_Opponent'] = (df_pts_for.groupby('week')['score'].transform('sum') - df_pts_for['score'])/(len(df_pts_for.groupby('teams')['score'])-1)
+df_pts_for['normalized score'] = df_pts_for['score'] - df_pts_for['Mean_Opponent']
+if 0 in df_pts_for.values:
+    df_pts_for = df_pts_for.drop(0,level='week')
+    df_pts_for = df_pts_for[(df_pts_for.T != 0).any()]
+if 0 in df_pts_ag.values:
+    df_pts_ag = df_pts_ag.drop(0,level='week')
+    df_pts_ag = df_pts_ag[(df_pts_ag.T != 0).any()]
+df_pts_for['3_week_rolling_mean'] = df_pts_for.groupby('teams')['normalized score'].rolling(3).mean().values
+df_pts_for['Margin'] = df_pts_for['score'] - df_pts_ag['score']
+df_pts_for['Won?'] = 0
+for i in df_pts_for.index.values:
+    if df_pts_for['Margin'][i] >0:
+        df_pts_for['Won?'][i] = 1
+    else:
+        df_pts_for['Won?'][i] = 0
+df_pts_for['Cumul_wins'] = df_pts_for.groupby('teams')['Won?'].cumsum()
 print(table2)
 
 

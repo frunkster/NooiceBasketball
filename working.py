@@ -3,6 +3,7 @@ from espn_api.basketball import League
 import pandas as pd
 import scipy.stats
 import plotly.graph_objects as go
+import chart_studio.plotly as py
 year=2021
 league_id = 18927521
 league = League(league_id=league_id,year=year)
@@ -111,6 +112,14 @@ fig.show()
 #fig = go.scatter(df['normalized score'],df_against['normalized score'])
 #fig.show()
 #%%
+import plotly.io as pio
+pio.write_html(fig, file='teams_wins.html', auto_open=True)
+
+#import chart_studio.tools as tls
+#tls.get_embed('https://plot.ly/~elizabethts/9/')
+
+
+##%%
 ptsfor = df[df['for']==1].drop(columns=['for',0])
 ptsfor = ptsfor.set_index('index').T
 pdf = pd.DataFrame(columns=['team1','team2','pval'])
@@ -138,3 +147,5 @@ pdf['team1'] = tm1
 pdf['team2'] = tm2
 pdf['pvalue'] = pv
 pdf.to_csv('pdf.csv')
+
+# %%
